@@ -4,7 +4,7 @@
     "production": {
       "latest_version": "1.0.3",
       "minimum_supported_version": "1.0.0",
-      "latest_build": 7,
+      "latest_build": 6,
       "update_url": "https://testflight.apple.com/join/jWH9jb3F",
       "release_notes": [
         "优化了查词体验，速度更快查词更准了",
@@ -14,7 +14,7 @@
     "testflight": {
       "latest_version": "1.0.3",
       "minimum_supported_version": "1.0.0",
-      "latest_build": 7,
+      "latest_build": 6,
       "update_url": "https://testflight.apple.com/join/jWH9jb3F",
       "release_notes": [
         "优化了查词体验，速度更快查词更准了",
