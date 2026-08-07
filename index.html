@@ -236,7 +236,7 @@
         <div class="hero-icon">🔒</div>
         <h1>Easy<span class="light">Input</span></h1>
         <h2>隐私政策</h2>
-        <p class="update-date">最后更新日期：2026年8月</p>
+        <p class="update-date">最后更新日期：2026年8月7日（App Store 提交版）</p>
     </div>
 
     <!-- Content -->
@@ -286,21 +286,23 @@
 
             <p>您选择的原始 TXT、EPUB 或 PDF 文件及设备文件路径只保存在当前设备，不上传 iCloud。为了让同一 iCloud 账户的其他设备可以阅读，应用会同步经过处理的可读正文与必要书目资料。</p>
 
-            <div class="sub-heading">5. 匿名使用与诊断数据</div>
-            <p>为了持续改进应用体验和优化推荐算法，本应用收集以下匿名数据：</p>
+            <div class="sub-heading">5. 可选的产品分析与系统诊断数据</div>
+            <p>产品分析默认关闭。只有在您主动开启「帮助改进 EasyInput」后，本应用才会收集以下假名化产品分析数据；您可以随时在设置中关闭：</p>
             <ul>
                 <li><span class="bullet">•</span><strong>产品交互数据：</strong>应用功能的使用频率和交互模式，用于优化产品体验</li>
-                <li><span class="bullet">•</span><strong>崩溃数据：</strong>应用崩溃日志和异常信息（通过 Apple MetricKit 收集），用于定位和修复问题</li>
-                <li><span class="bullet">•</span><strong>性能数据：</strong>CPU 使用率、内存占用、启动时间、耗电量等，用于优化应用性能</li>
                 <li><span class="bullet">•</span><strong>推荐算法分析数据：</strong>书籍推荐展示记录、阅读反馈、能力变化趋势等，用于优化推荐算法的准确性</li>
                 <li><span class="bullet">•</span><strong>阅读行为数据：</strong>试读完成记录、查词行为、阅读模式偏好等匿名统计信息</li>
-                <li><span class="bullet">•</span><strong>设备信息：</strong>设备型号、操作系统版本、应用版本（不包含设备标识符）</li>
+                <li><span class="bullet">•</span><strong>设备与版本信息：</strong>设备型号、操作系统版本、应用版本和构建版本</li>
+                <li><span class="bullet">•</span><strong>随机安装标识：</strong>仅用于关联本应用内的多次分析事件，不跨应用、不用于广告追踪</li>
             </ul>
-            <p>匿名分析数据可通过 Apple CloudKit 公共数据库传输和存储，并仅使用随机生成的安装标识；本 App 导出的同步诊断文件设计为不包含书名、正文、原始文件名、文件路径或 AI 提示词。</p>
+            <p>可选产品分析数据通过 Apple CloudKit 公共数据库传输和存储。开启后，本应用才会生成随机安装标识（app-local UUID，跨启动保持稳定，仅用于关联本应用内多次使用，不跨应用、不与开发商其他应用关联）。关闭产品分析后，本应用停止后续上传、丢弃尚未上传的事件，并删除当前设备上的安装标识；再次开启时会生成新标识。本 App 导出的同步诊断文件设计为不包含书名、正文、原始文件名、文件路径或 AI 提示词。</p>
+
+            <div class="sub-heading">6. Apple 系统诊断</div>
+            <p>Apple 可能依据其政策处理系统崩溃与性能诊断，并在 Xcode Organizer 中向开发者提供汇总信息。当前版本不会把完整 MetricKit 性能或诊断报告上传到 EasyInput 服务器、产品分析数据库或由 EasyInput 自行持久化；应用回调仅可能在设备系统日志中记录报告到达时间或条目数量。</p>
 
             <div class="callout">
                 <div class="callout-title">⚠️ 重要说明</div>
-                <p>上述个人阅读数据会先保存在本机；当您登录 iCloud 且同步服务可用时，也会保存到您当前 Apple 账户隔离的 CloudKit 私有数据库，用于同账号设备同步。开发者不会取得您的 Apple 账户姓名、邮箱或密码。匿名分析与诊断数据可通过 CloudKit 和 MetricKit 传输。</p>
+                <p>上述个人阅读数据会先保存在本机；当您登录 iCloud 且同步服务可用时，也会保存到您当前 Apple 账户隔离的 CloudKit 私有数据库，用于同账号设备同步。开发者不会取得您的 Apple 账户姓名、邮箱或密码。您主动开启的产品分析数据可通过 CloudKit 传输；完整 MetricKit 报告不会由本应用上传或自行保存。</p>
             </div>
         </div>
 
@@ -316,7 +318,7 @@
                 <li><span class="bullet">•</span>生成个人能力评估报告</li>
             </ul>
             <p>所有推荐算法均在您的设备本地运行，不依赖云端计算。</p>
-            <p>AI 语境释义功能会将您查询的词汇及所在阅读语境发送给智谱 AI（BigModel），用于生成基于语境的词汇释义。详见下方「AI 数据处理」章节。</p>
+            <p>AI 语境释义功能会将您查询的词汇及所在阅读语境加密发送至 EasyInput 位于上海的服务端，再转发给北京智谱华章科技股份有限公司提供的智谱清言（ChatGLM），用于生成基于语境的词汇释义。详见下方「AI 数据处理」章节。</p>
         </div>
 
         <!-- 数据存储与安全 -->
@@ -327,7 +329,7 @@
                 <li><span class="bullet">•</span>档案、能力、试读、阅读记录、进度、在读状态和用户可读书籍先存储在本机</li>
                 <li><span class="bullet">•</span>同一 Apple 账户的设备通过 CloudKit 私有数据库同步上述数据</li>
                 <li><span class="bullet">•</span>原始导入文件和设备路径保持本机专属；移除原文件不会删除已同步的可读正文、阅读记录或进度</li>
-                <li><span class="bullet">•</span>匿名诊断数据（崩溃、性能等）通过 Apple 系统框架（MetricKit）以聚合方式收集，不包含个人身份信息</li>
+                <li><span class="bullet">•</span>当前版本不把完整 MetricKit 性能或诊断报告上传到 EasyInput 服务器或产品分析数据库，也不由 EasyInput 自行持久化</li>
                 <li><span class="bullet">•</span>删除 App 会移除当前设备上的 App 数据，但不会自动删除已存入 iCloud 的副本；重新安装并使用同一 Apple 账户时，数据可能再次同步回来</li>
                 <li><span class="bullet">•</span>应用遵循 Apple 的数据保护指南和安全标准</li>
             </ul>
@@ -340,7 +342,7 @@
             <ul>
                 <li><span class="bullet">•</span>本应用不要求您注册账号或提供任何个人身份信息</li>
                 <li><span class="bullet">•</span>CloudKit 私有数据库由 Apple 按当前 iCloud 账户隔离；本应用不会取得您的 Apple 账户姓名、邮箱或密码</li>
-                <li><span class="bullet">•</span>匿名分析数据不会包含姓名、邮箱、手机号或设备广告标识符</li>
+                <li><span class="bullet">•</span>可选产品分析数据不会包含您的昵称、姓名、邮箱、手机号或设备广告标识符；事件仅通过随机安装标识进行假名化关联</li>
                 <li><span class="bullet">•</span>AI 请求不会附带档案、阅读进度、书名或设备标识</li>
             </ul>
         </div>
@@ -354,7 +356,7 @@
                 <li><span class="bullet">•</span>不会将您的任何数据出租给任何第三方</li>
                 <li><span class="bullet">•</span>除 AI 语境释义服务（智谱 AI）外，不会在未经您明确同意的情况下与任何第三方共享您的数据</li>
             </ul>
-            <p>Apple CloudKit 用于保存和同步数据；只有在您明确同意后，本应用才会把下方列出的最少文本发送给智谱 AI。匿名分析数据仅用于改进算法和应用体验。本应用不包含第三方广告 SDK，也不进行跨 App 跟踪。</p>
+            <p>Apple CloudKit 用于保存和同步数据；只有在您明确同意后，本应用才会把下方列出的最少文本发送至 EasyInput 服务端并转发给智谱。可选产品分析数据仅用于改进算法和应用体验。本应用不包含第三方广告 SDK，也不进行跨 App 跟踪。您主动开启的产品分析数据通过 Apple CloudKit 传输；完整 MetricKit 报告不会由本应用上传或自行保存。</p>
         </div>
 
         <!-- 您的权利 -->
@@ -363,19 +365,20 @@
             <p>您对您的数据享有以下权利：</p>
             <ul>
                 <li><span class="bullet">•</span><strong>访问权：</strong>您可以随时在应用内查看您的测试结果、能力评估和收藏</li>
-                <li><span class="bullet">•</span><strong>本机删除权：</strong>删除 App 可移除当前设备上的本地副本；已同步的 iCloud 数据需通过 Apple 提供的 iCloud 数据管理入口另行管理</li>
+                <li><span class="bullet">•</span><strong>本机删除权：</strong>删除 App 可移除当前设备上的本地副本；如需查看或删除已同步的 iCloud 数据，请前往“系统设置 → Apple 账户 → iCloud → 储存空间”管理 EasyInput 数据。不同系统版本的名称可能略有差异</li>
                 <li><span class="bullet">•</span><strong>更正权：</strong>您可以随时重新进行能力测试以更新您的水平数据</li>
+                <li><span class="bullet">•</span><strong>撤回产品分析同意：</strong>您可以在「设置 → 数据与存储 → 帮助改进 EasyInput」随时关闭；关闭后停止后续上传并删除当前设备上的随机安装标识</li>
                 <li><span class="bullet">•</span><strong>撤回 AI 同意：</strong>您可以在「设置 → 语言服务 → 上下文释义」随时撤回；撤回后系统词典仍可使用</li>
             </ul>
         </div>
 
-        <!-- 儿童隐私 -->
+        <!-- 未成年人保护 -->
         <div class="section">
-            <h3><span class="icon">👶</span> 七、儿童隐私保护</h3>
-            <p>本应用主要面向英语学习者，包括儿童和青少年用户。我们特别重视儿童的隐私保护：</p>
+            <h3><span class="icon">🛡️</span> 七、未成年人保护</h3>
+            <p>本应用定位为面向 13 岁及以上英语学习者的阅读工具，不以 13 岁以下儿童为主要受众，也不属于 App Store 儿童类别。我们重视未成年人的隐私保护：</p>
             <ul>
                 <li><span class="bullet">•</span>我们不会故意收集13岁以下儿童的个人身份信息</li>
-                <li><span class="bullet">•</span>本应用不要求儿童或青少年提供真实姓名等身份信息；测试和试读数据可保存在当前 Apple 账户隔离的 CloudKit 私有数据库中，用于同账号设备同步</li>
+                <li><span class="bullet">•</span>本应用不要求用户提供真实姓名等身份信息；测试和试读数据可保存在当前 Apple 账户隔离的 CloudKit 私有数据库中，用于同账号设备同步</li>
                 <li><span class="bullet">•</span>本应用不包含任何社交功能，不会收集或分享任何用户间交互数据</li>
                 <li><span class="bullet">•</span>家长或监护人可以删除本机 App 数据，并通过 Apple 提供的入口管理 iCloud 数据</li>
             </ul>
@@ -389,8 +392,8 @@
                 <li><span class="bullet">•</span>用户阅读数据通过 Apple CloudKit 私有数据库在同一 iCloud 账户设备间同步</li>
                 <li><span class="bullet">•</span>CloudKit 与 AI 请求均使用加密连接传输</li>
                 <li><span class="bullet">•</span>应用遵循 Apple 的数据保护指南和 App Store 审核标准</li>
-                <li><span class="bullet">•</span>应用不包含任何第三方广告 SDK 或数据收集组件</li>
-                <li><span class="bullet">•</span>AI 语境释义功能使用智谱 AI（BigModel）服务，详见下方「AI 数据处理」章节</li>
+                <li><span class="bullet">•</span>应用不包含第三方广告 SDK；AI 语境释义所用的智谱服务见下文章节；可选产品分析通过 CloudKit 传输，完整 MetricKit 报告不会由本应用上传或自行保存</li>
+                <li><span class="bullet">•</span>AI 语境释义功能使用已备案的智谱清言（ChatGLM）服务，详见下方「AI 数据处理」章节</li>
             </ul>
         </div>
 
@@ -401,11 +404,13 @@
 
             <div class="sub-heading">服务提供商</div>
             <ul>
-                <li><span class="bullet">•</span><strong>智谱 AI（BigModel）</strong>，服务地址：open.bigmodel.cn</li>
+                <li><span class="bullet">•</span><strong>EasyInput AI 中转服务</strong>，部署于中国上海，基础设施由腾讯云提供，服务地址：easyinput.cloud</li>
+                <li><span class="bullet">•</span><strong>智谱清言（ChatGLM）</strong>，由北京智谱华章科技股份有限公司提供，EasyInput 服务端将请求转发至其接口</li>
+                <li><span class="bullet">•</span><strong>生成式 AI 服务备案号：</strong>Beijing-ChatGLM-20230821（<a href="https://docs.bigmodel.cn/cn/guide/platform/filing">查看智谱官方备案信息</a>）</li>
             </ul>
 
             <div class="sub-heading">发送的数据</div>
-            <p>当您在阅读中查词时，以下数据会发送给智谱 AI：</p>
+            <p>当您在阅读中查词时，以下数据会先发送至 EasyInput 服务端，再转发给智谱 AI：</p>
             <ul>
                 <li><span class="bullet">•</span><strong>查询的词汇：</strong>您点击查询的英文单词或短语</li>
                 <li><span class="bullet">•</span><strong>目标句：</strong>包含该词的完整句子</li>
@@ -414,17 +419,19 @@
             </ul>
 
             <div class="sub-heading">数据用途</div>
-            <p>发送的数据用于提供基于阅读语境的本次词汇释义；智谱 AI 还会按照其公开的隐私政策和服务协议进行安全保障及依法处理。例如，查询"vessel"时，AI 会根据上下文判断此处指"船只"而非"血管"。</p>
+            <p>发送的数据用于提供基于阅读语境的本次词汇释义。例如，查询"vessel"时，AI 会根据上下文判断此处指"船只"而非"血管"。EasyInput 不会使用这些阅读片段训练自己的模型；智谱会按照其公开的隐私政策和服务协议进行安全保障及依法处理。</p>
 
             <div class="sub-heading">数据保护</div>
             <ul>
                 <li><span class="bullet">•</span>数据通过 HTTPS 加密传输</li>
+                <li><span class="bullet">•</span>EasyInput 服务端不持久化 AI 输入或生成结果；运行日志只记录随机请求编号、功能类型、响应状态和耗时，不记录提示词、生成内容、API Key 或完整网络地址</li>
+                <li><span class="bullet">•</span>网络地址仅在服务进程内存中短暂用于限流和安全保护，不写入访问日志</li>
                 <li><span class="bullet">•</span>不发送任何个人身份信息（姓名、邮箱、设备标识符等）</li>
                 <li><span class="bullet">•</span>不发送书名、档案、能力测试、兴趣偏好或阅读进度</li>
             </ul>
 
             <div class="sub-heading">服务商处理与保留</div>
-            <p>智谱 AI 会按照其公开的隐私政策和服务协议，在提供服务、保障安全与履行法律义务所需的期限内处理输入与生成内容。您可查看<a href="https://docs.bigmodel.cn/cn/terms/privacy-policy">智谱 AI 隐私政策</a>及<a href="https://docs.bigmodel.cn/cn/terms/service-agreement">服务协议</a>。</p>
+            <p>EasyInput 服务端仅在完成本次转发和短期限流所需的内存中处理数据，不建立 AI 对话档案。智谱会按照其公开条款，在提供服务和满足合规要求所需的最小必要范围内存储数据，并采取必要的匿名化和加密处理。其公开隐私政策说明，无法重新识别的匿名化数据可能用于研究、统计、改进产品和服务，包括机器学习或模型算法训练。因此，EasyInput 不向您承诺智谱“零留存”或“绝不训练”。您可查看<a href="https://docs.bigmodel.cn/cn/terms/privacy-policy">智谱隐私政策</a>、<a href="https://docs.bigmodel.cn/cn/terms/service-agreement">服务协议</a>及<a href="https://docs.bigmodel.cn/cn/terms/user-agreement">用户协议</a>。</p>
 
             <div class="sub-heading">您的选择</div>
             <p>在第一次 AI 查词请求发送前，本应用会明确展示接收方和上述数据范围，并提供「同意并发送」与「不同意，仅使用系统词典」。您可在设置中随时撤回同意。</p>
