@@ -4,19 +4,21 @@
     "production": {
       "latest_version": "1.0.3",
       "minimum_supported_version": "1.0.0",
-      "latest_build": 31,
+      "latest_build": 36,
       "update_url": "https://testflight.apple.com/join/jWH9jb3F",
       "release_notes": [
-        "优化了查词体验",
+        "移除了没有版权的内容",
+        "修复了查词流式传输功能"
       ]
     },
     "testflight": {
       "latest_version": "1.0.3",
       "minimum_supported_version": "1.0.0",
-      "latest_build": 31,
+      "latest_build": 36,
       "update_url": "https://testflight.apple.com/join/jWH9jb3F",
       "release_notes": [
-        "优化了查词体验",
+        "移除了没有版权的内容",
+        "修复了查词流式传输功能"
       ]
     }
   }
